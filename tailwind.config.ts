@@ -7,12 +7,18 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+    extend: { 
+      backgroundImage:{
+        auth: "url('/grafico.svg')"
       },
+      backgroundSize:{
+        30: "30rem"
+      },
+      
     },
   },
-  plugins: [],
+  plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require('@tailwindcss/forms')
+  ],
 } satisfies Config;
