@@ -2,7 +2,7 @@ import { DialogTitle } from "@headlessui/react";
 import ExpenseForm from "./ExpenseForm";
 import { useActionState, useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { DrafExpense } from "@/src/schemas";
+import {  DraftExpenseEdit } from "@/src/schemas";
 
 import editExpense from "@/actions/edit-expense-action";
 import ErrorMessage from "../ui/ErrorMessage";
@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 
 export default function EditExpenseForm({ closeModal }: { closeModal: () => void }) {
 
-  const [expense ,setExpense]= useState<DrafExpense>()
+  const [expense ,setExpense]= useState<DraftExpenseEdit>()
 
   //obtenes los datos de la url
   const  {id: budgetId }= useParams()
@@ -32,14 +32,17 @@ export default function EditExpenseForm({ closeModal }: { closeModal: () => void
      fetch(url)
         .then(res => res.json())
         .then(data => setExpense(data))
-  },[])
+        .catch(err => console.log(err)).finally( () => console.log('Fetched'));
+  },[budgetId,expenseId])
 
   useEffect(() => {
      if(state.success){
         toast.success(state.success)
         closeModal()
      }
-  },[state])
+  },[state,closeModal])
+
+  
 
 
   return (

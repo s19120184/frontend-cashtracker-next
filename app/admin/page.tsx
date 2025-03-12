@@ -40,6 +40,8 @@ export default async function AdminPage() {
   //no devemos utilizar un server action para obtener datos del backend
   const budget = await getUserBudgets();
 
+  
+
   return (
     <>
       <div className="flex flex-col-reverse md:flex-row md:justify-between items-center">

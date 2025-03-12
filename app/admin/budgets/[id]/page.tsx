@@ -13,7 +13,7 @@ import React from "react";
 export async function generateMetadata({
   params
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
   const budget = await getbudget(id);
@@ -27,7 +27,7 @@ export async function generateMetadata({
 export default async function BudgetDetailsPage({
   params
 }: {
-  params: { id: string };
+  params:Promise< { id: string }>;
 }) {
   const { id } = await params;
 

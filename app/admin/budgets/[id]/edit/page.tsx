@@ -7,7 +7,7 @@ import Link from "next/link";
 
 
 //crear metadata dinamica funcion propia de next que la ejecuta automaticamente
-export async function generateMetadata({params}:{params:{id:string}}):Promise<Metadata>{
+export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{
    const {id}= await params;
    const budget= await getbudget(id)
 
@@ -21,7 +21,7 @@ export async function generateMetadata({params}:{params:{id:string}}):Promise<Me
 export default async function EditBudgetPage({
   params
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   //obtenemos el id desde al ruta dinamica
   const { id } = await params;

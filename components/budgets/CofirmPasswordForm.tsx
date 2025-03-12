@@ -10,6 +10,8 @@ export default function ConfirmPasswordForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
+ 
+
   //obtenemos el budget id
   const budgetId= +searchParams.get('deleteBudgetId')!
 
@@ -18,6 +20,14 @@ export default function ConfirmPasswordForm() {
     errors:[],
     success:''
   })
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const closeModal = () => {
+    const hideModal = new URLSearchParams(searchParams.toString())
+    hideModal.delete('deleteBudgetId')
+    router.replace(`${pathname}?${hideModal}`)
+  }
+
 
   useEffect(()=>{
      if(state.success){
@@ -25,14 +35,11 @@ export default function ConfirmPasswordForm() {
         closeModal()
         
      }
-  },[state])
+  },[state,closeModal]);
 
-  const closeModal = () => {
-    const hideModal = new URLSearchParams(searchParams.toString())
-    hideModal.delete('deleteBudgetId')
-    router.replace(`${pathname}?${hideModal}`)
-  }
 
+  
+ 
   return (
     <>
       <DialogTitle

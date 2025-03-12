@@ -27,7 +27,7 @@ export default function ConfirmAccountForm() {
       dispatch();
     }
   
-  }, [isComplete]);
+  }, [isComplete,dispatch]);
 
 
   //escuchar los cambios en el state
@@ -45,7 +45,7 @@ export default function ConfirmAccountForm() {
          }
        })
      }
-  },[state]);
+  },[state,router]);
 
   //asignar el valor del token al estado
   const handleChange = (token: string) => {

@@ -28,7 +28,7 @@ export default function EditBudtgetForm({budget}:{budget:Budget}) {
        router.push('/admin')
     }
 
-  },[state])
+  },[state,router])
 
   return (
      <form

@@ -30,7 +30,7 @@ export default function ResetPasswordForm({token}: ResetPasswordProps) {
           }
         })
       }
-    },[state])
+    },[state,router])
   
     return (
       <form

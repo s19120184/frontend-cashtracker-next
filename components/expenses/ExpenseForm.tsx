@@ -1,7 +1,7 @@
-import { DrafExpense } from "@/src/schemas"
+import {  DraftExpenseEdit } from "@/src/schemas"
 
 type ExpenseFormProps={
-    expense?:DrafExpense
+    expense?:DraftExpenseEdit
 }
 
 export default function ExpenseForm({expense}: ExpenseFormProps) {
