@@ -49,16 +49,16 @@ export default function EditExpenseForm({ closeModal }: { closeModal: () => void
     <>
       <DialogTitle
         as="h3"
-        className="font-black text-4xl text-purple-950 my-5"
+        className="font-black text-2xl lg:text-4xl text-purple-950 my-5"
       >
         Editar Gasto
       </DialogTitle>
-      <p className="text-xl font-bold">Edita los detalles de un {''}
+      <p className="text-sm lg:text-xl font-bold">Edita los detalles de un {''}
         <span className="text-amber-500">gasto</span>
       </p>
       {state.errors.map(error => <ErrorMessage key={error}>{error}</ErrorMessage>)}
       <form
-        className="bg-gray-100 shadow-lg rounded-lg p-10 mt-10 border"
+        className="bg-gray-100  shadow-lg rounded-lg p-10 mt-10 border"
         noValidate
         action={dispatch}
       >

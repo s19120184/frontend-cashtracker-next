@@ -71,7 +71,7 @@ export default function ConfirmPasswordForm() {
             name='password'
           />
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid lg:grid-cols-2 gap-5">
           <input
             type="submit"
             value='Eliminar Presupuesto'

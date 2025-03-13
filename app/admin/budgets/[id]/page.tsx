@@ -44,9 +44,9 @@ export default async function BudgetDetailsPage({
 
   return (
     <>
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="font-black text-4xl text-purple-950">{budget.name}</h1>
+      <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="p-5 md:p-0">
+          <h1 className="font-black text-3xl lg:text-4xl text-purple-950">{budget.name}</h1>
           <p className="text-xl font-bold">
             Administra tus {""} <span className="text-amber-500">gastos</span>
           </p>
@@ -67,7 +67,7 @@ export default async function BudgetDetailsPage({
             </div>
           </div>
 
-          <h1 className="font-black text-4xl text-purple-950 mt-10">
+          <h1 className="font-black text-3xl text-center lg:text-4xl text-purple-950 mt-10">
             Gastos en este presupuesto
           </h1>
 
